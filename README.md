@@ -47,8 +47,10 @@ Obs. Para fins de testes, ao invés do sensor de corrente, foi utilizado um pote
 
 2.5. Circuito Completo do Hardware
 Para fins de testes, o hardware preliminar é simulado na plataforma wooki e o sensor utilizado é um potenciômetro. Segue esquemático de teste:
- 
+![image](https://github.com/user-attachments/assets/ddd0c737-7816-40a5-87a9-9d42c947729a)
+
 3. Testes e Validação
+   
 3.1. Teste de Precisão
 Procedimento: Comparar os valores medidos pelo sistema com um medidor comercial certificado ao longo de 24 horas.
 Resultado Esperado: Diferença máxima de 5% entre as medições.
