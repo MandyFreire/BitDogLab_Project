@@ -81,7 +81,7 @@ void app_main(void) {
 
     // Configura ADC para leitura do joystick
     adc1_config_width(ADC_WIDTH_BIT_12);
-    adc1_config_channel_atten(JOYSTICK_X, ADC_ATTEN_DB_12);  // ✅ Substituído ADC_ATTEN_DB_11
+    adc1_config_channel_atten(JOYSTICK_X, ADC_ATTEN_DB_12); 
 
     while (1) {
         float corrente = ler_corrente();
