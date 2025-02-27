@@ -42,8 +42,11 @@ Este projeto diferencia-se por integrar sensores não invasivos com análise de 
 2.2. Função de Cada Bloco
 
 •	Sensor de Corrente (CT Clamp): Captura a corrente elétrica do circuito monitorado.
+
 •	BitDogLab: Processa os dados e transmite via Wi-Fi.
+
 •	Servidor Cloud: Armazena e processa os dados coletados.
+
 •	Dashboard: Exibe informações e alertas para o usuário.
 
 2.3. Configuração dos Blocos
@@ -59,6 +62,7 @@ Obs. Para fins de testes, ao invés do sensor de corrente, foi utilizado um pote
 2.5. Circuito Completo do Hardware
 
 Para fins de testes, o hardware preliminar é simulado na plataforma wooki e o sensor utilizado é um potenciômetro. Segue esquemático de teste:
+
 ![image](https://github.com/user-attachments/assets/ddd0c737-7816-40a5-87a9-9d42c947729a)
 
 3. Testes e Validação
@@ -88,8 +92,11 @@ Resultado Esperado: Confirmação da transmissão de dados segura (criptografia 
 4.1. Metodologia
 
 •	Pesquisa sobre monitoramento de energia;
+
 •	Escolha do hardware adequado;
+
 •	Desenvolvimento da programação;
+
 •	Implementação e testes.
 
 4.2. Testes de Validação
@@ -121,9 +128,13 @@ O uso de aprendizado de máquina possibilitaria a identificação de padrões de
 A integração do sistema com fontes de energia renovável, como painéis solares, permitiria o monitoramento tanto do consumo quanto da geração de energia. Além disso, sua aplicação pode ser estendida para ambientes industriais, auxiliando no gerenciamento energético de grandes instalações.
 
 5. Referências
-   
+
 •	Normas ABNT NBR 5410:2004 e ISO 50001:2018.
+
 •	Documentação da BitDogLab.
+
 •	CT Clamp Current Sensor — ESPHome
+
 •	BitDogLab
+
 •	IoT Analytics - ThingSpeak Internet of Things
