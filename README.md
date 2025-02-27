@@ -87,6 +87,7 @@ Resultado Esperado: Consumo inferior a 5W para minimizar impacto na conta de ene
 Procedimento: Verificar se os dados transmitidos estão criptografados usando ferramentas de análise de pacotes.
 Resultado Esperado: Confirmação da transmissão de dados segura (criptografia WPA2 ou superior).
  
+
 4. Execução do Projeto
 
 4.1. Metodologia
