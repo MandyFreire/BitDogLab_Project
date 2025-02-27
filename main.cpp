@@ -13,15 +13,18 @@ float lerCorrente() {
 }
 
 void setup() {
-    Serial.begin(115200);
-    
-    // Conectar ao Wi-Fi
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-    while (WiFi.status() != WL_CONNECTED) {
+    int maxRetries = 30; // 30 seconds timeout
+    while (WiFi.status() != WL_CONNECTED && maxRetries > 0) {
         delay(1000);
         Serial.println("Conectando ao Wi-Fi...");
+        maxRetries--;
     }
-    Serial.println("Wi-Fi conectado!");
+    if (WiFi.status() == WL_CONNECTED) {
+        Serial.println("Wi-Fi conectado!");
+    } else {
+        Serial.println("Falha ao conectar ao Wi-Fi.");
+    }
 }
 
 void loop() {
@@ -32,18 +35,22 @@ void loop() {
     Serial.printf("Corrente Simulada: %.2f A\n", corrente);
 
     // Enviar os dados para o servidor
-    HTTPClient http;
-    String url = String(SERVER_URL) + String(corrente);
-    http.begin(url);
-    int httpResponseCode = http.GET();
-    
-    if (httpResponseCode > 0) {
-        Serial.printf("Dados enviados com sucesso! Código: %d\n", httpResponseCode);
+    static HTTPClient http;
+    if (WiFi.status() == WL_CONNECTED) {
+        String url = String(SERVER_URL) + String(corrente);
+        http.begin(url);
+        int httpResponseCode = http.GET();
+        
+        if (httpResponseCode > 0) {
+            Serial.printf("Dados enviados com sucesso! Código: %d\n", httpResponseCode);
+        } else {
+            Serial.printf("Erro ao enviar dados: %d\n", httpResponseCode);
+        }
+        
+        http.end();
     } else {
-        Serial.printf("Erro ao enviar dados: %d\n", httpResponseCode);
+        Serial.println("Falha na conexão Wi-Fi.");
     }
-    
-    http.end();
     
     delay(5000);  // Atualiza a cada 5 segundos
 }
